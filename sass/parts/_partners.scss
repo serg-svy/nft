@@ -1,0 +1,59 @@
+.partners {
+  background: {
+    color: $mainColor;
+  };
+  display: flex;
+  justify-content: center;
+  padding: 65px 15px 45px;
+  &__heading {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 70px;
+  };
+  &__links {
+    display: flex;
+    gap: 100px;
+    @media (max-width: 565px){
+      gap: 40px;
+    }
+  }
+  &__link {
+    @include adaptiveValue("width", 100, 40);
+      @include adaptiveValue("height", 100, 40);
+    background: {
+      size: cover;
+      position: center;
+    };
+    transition: 0.3s ease 0s;
+    &-1 {
+      background: {
+        image: url('../img/partners/partner-1.svg');
+      };
+      &:hover {
+        background: {
+          image: url('../img/partners/partner-1-hover.svg');
+        };
+      }
+    }
+    &-2 {
+      background: {
+        image: url('../img/partners/partner-2.svg');
+      };
+      &:hover {
+        background: {
+          image: url('../img/partners/partner-2-hover.svg');
+        };
+      }
+    }
+    &-3 {
+      background: {
+        image: url('../img/partners/partner-3.svg');
+      };
+      &:hover {
+        background: {
+          image: url('../img/partners/partner-3-hover.svg');
+        };
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+/* переменные цветов */
+:root {
+  --basic-color: #499BFE;
+  --secondaryColor: #C8E1FF;
+  --accent1: #00397D;
+  --accent2: #0A9F0A;
+  --bgColor: #fff;
+}
+
+body.lock {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Проверяем совместимость overflow: clip */
+@supports (overflow: clip) {
+  .wrapper {
+    overflow: clip;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+[class*=__container] {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+/* общие стили */
+.heading {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+img {
+  image-rendering: pixelated;
+}

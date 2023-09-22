@@ -1,0 +1,153 @@
+.footer {
+  background: {
+    // image: url('../img/footer-bg.svg');
+    color: $mainColor;
+  };
+  // height: rem(790);
+  position: relative;
+  &::after {
+    content: '';
+    background: {
+      image: url('../img/footer-bg.svg');
+      repeat: no-repeat;
+      size: cover;
+    };
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    @media (max-width: 650px){
+      background: {
+        image: none;
+        color: $secondaryColor;
+      };
+      @include adaptiveValue("top", 150, 100);
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @media (max-width: 1150px){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__container {
+    padding: 368px 15px 158px;
+    position: relative;
+    z-index: 2;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo {
+    display: flex;
+    align-items: flex-end;
+    &__heading {
+      margin-left: 31px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 550px){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .menu {
+    margin-top: 42px;
+    &__body {
+      @media (max-width: 650px){
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      @media (max-width: 680px){
+        width: 360px;
+        justify-content: space-around;
+      }
+    }
+    &__link {
+      color: $accent1;
+      font-weight: bold;
+    }
+  }
+  .social {
+    display: flex;
+    gap: 40px;
+    @media (max-width: 1150px){
+      margin-top: 40px;
+      img {
+        @include adaptiveValue("width", 110, 80);
+      }
+    }
+    &__link {
+      // width: rem(110);
+      // height: rem(110);
+      @include adaptiveValue("width", 110, 50);
+      @include adaptiveValue("height", 110, 50);
+      background: {
+        size: cover;
+        position: center;
+      };
+      &-1 {
+        background: {
+          image: url('../img/icons-social/twitter.svg');
+        };
+        &:hover {
+          background: {
+            image: url('../img/icons-social/twitter-hover.svg');
+          };
+        }
+      }
+      &-2 {
+        background: {
+          image: url('../img/icons-social/discord.svg');
+        };
+        &:hover {
+          background: {
+            image: url('../img/icons-social/discord-hover.svg')
+          };
+        }
+      }
+      &-3 {
+        background: {
+          image: url('../img/icons-social/crew3.svg');
+        };
+        &:hover {
+          background: {
+            image: url('../img/icons-social/crew3-hover.svg')
+          };
+        }
+      }
+    }
+  }
+  &__copy {
+    margin-top: 55px;
+    @media (max-width: 650px){
+      text-align: center;
+    }
+  }
+  @media (max-width: 650px){
+    &::before {
+      content: '';
+      background: {
+        image: url('../img/footer-bg-mobile.svg');
+        size: contain;
+        repeat: no-repeat;
+      };
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      z-index: 3;
+    }
+  }
+}
